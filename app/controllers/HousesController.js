@@ -24,6 +24,15 @@ export class HousesController {
     document.getElementById('houseFormPlaceholder').classList.add('d-none')
     document.getElementById('houseForm').classList.remove('d-none')
   }
+  
+  async getHouses() {
+    try {
+      await housesServices.getHouses()
+    } catch (error) {
+      console.error('COULD NOT GET HOUSES', error);
+      Pop.error(error, 'Could not get houses')
+    }
+  }
 
   async createHouseListing() {
     try {
@@ -39,12 +48,13 @@ export class HousesController {
     }
   }
 
-  async getHouses() {
-    try {
-      await housesServices.getHouses()
-    } catch (error) {
-      console.error('COULD NOT GET HOUSES', error);
-      Pop.error(error, 'Could not get houses')
+  async deleteHouseListing(houseId) {
+    const confirmed = await Pop.confirm('Are you sure you want to delete this house listing?', 'This change cannot be undone.', 'Yes, please delete it.', 'No, I changed my mind.')
+
+    if (!confirmed) {
+      return
     }
+    housesServices.deleteHouse(houseId)
   }
+
 }

@@ -43,7 +43,7 @@ export class House {
     }
     
     return `
-    <button class="btn btn-outline-danger">
+    <button onclick="app.housesController.deleteHouseListing('${this.id}')" class="btn btn-outline-danger">
       Delete
     </button>
     `
