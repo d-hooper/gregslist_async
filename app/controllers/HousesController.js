@@ -1,12 +1,22 @@
+import { AppState } from "../AppState.js";
 import { housesServices } from "../services/HousesServices.js";
 import { Pop } from "../utils/Pop.js";
 
 export class HousesController {
 
   constructor() {
+    AppState.on('houses', this.drawHouses)
     this.getHouses()
   }
 
+  drawHouses() {
+    const houses = AppState.houses
+    const housesElem = document.getElementById('houseListings')
+    let housesContent = ''
+    houses.forEach(house => housesContent += house.houseCard)
+    housesElem.innerHTML = housesContent
+
+  }
 
   async getHouses() {
     try {
