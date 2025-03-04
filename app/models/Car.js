@@ -26,13 +26,13 @@ export class Car {
       return ''
     }
 
-    // NTOE if the logged in user did not create the car
+    // NOTE if the logged in user did not create the car
     if (this.creatorId != user.id) {
       return ''
     }
 
     return `
-     <button onclick="app.carsController.deleteCar('${this.id}')" class="btn btn-outline-danger">
+     <button onclick="app.carsController.deleteCar('${this.id}')" type="button" class="btn btn-outline-danger">
         Delete Car
       </button>
     `

@@ -31,6 +31,67 @@
           <h2>Houses</h2>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <div id="updateHouseModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <p class="modal-title fs-5">Update House Listing</p>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="updateHouseForm" class="modal-body">
+                  <form onsubmit="app.housesController.updateHouseListing()">
+                    <div class="mb-3">
+                      <label for="updateHouseLevels">Number of Stories</label>
+                      <input id="updateHouseLevels" name="levels" type="number" required placeholder="1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="updateNumOfBedrooms">Number of Bedrooms</label>
+                      <input id="updateNumOfBedrooms" name="bedrooms" type="number" required placeholder="3">
+                    </div>
+                    <div class="mb-3">
+                      <label for="updateNumOfBathrooms">Number of Bathrooms</label>
+                      <input id="updateNumOfBathrooms" name="bathrooms" type="number" required placeholder="2">
+                    </div>
+                    <div class="mb-3">
+                      <label for="updateHouseYear">Year of Construction</label>
+                      <input id="updateHouseYear" name="year" type="number" required min="1637" max="2025" placeholder="2015">
+                    </div>
+                    <div class="mb-3">
+                      <label for="updateHousePrice">Price</label>
+                      <input id="updateHousePrice" name="price" type="number" required max="100000000"
+                             placeholder="450000">
+                    </div>
+                    <div class="mb-3">
+                      <label for="updateHouseDescription">House Description</label>
+                      <input id="updateHouseDescription" name="description" type="text" max="500"
+                             placeholder="This house is...">
+                    </div>
+                    <div class="mb-3">
+                      <label for="updateHouseImgUrl">House Image URL</label>
+                      <input id="updateHouseImgUrl" name="imgUrl" type="url" max="500" placeholder="https://image.com...">
+                    </div>
+                    <div class="d-flex">
+                      <button class="btn btn-outline-danger me-2" type="reset">
+                        Reset
+                      </button>
+                      <button class="btn btn-outline-dark" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
       <div class="row align-items-center mb-4">
         <div class="col-5">
           <img src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -50,11 +111,11 @@
               </div>
               <div class="mb-3">
                 <label for="numOfBedrooms">Number of Bedrooms</label>
-                <input id="numOfBedrooms" name="bedrooms" type="number" required min="1" max="100" placeholder="3">
+                <input id="numOfBedrooms" name="bedrooms" type="number" required placeholder="3">
               </div>
               <div class="mb-3">
                 <label for="numOfBathrooms">Number of Bathrooms</label>
-                <input id="numOfBathrooms" name="bathrooms" type="number" required min="1" max="20" placeholder="2">
+                <input id="numOfBathrooms" name="bathrooms" type="number" required placeholder="2">
               </div>
               <div class="mb-3">
                 <label for="houseYear">Year of Construction</label>
@@ -67,7 +128,7 @@
               </div>
               <div class="mb-3">
                 <label for="houseDescription">House Description</label>
-                <input id="houseDescription" name="description" type="text" max="120"
+                <input id="houseDescription" name="description" type="text" max="500"
                        placeholder="This house is...">
               </div>
               <div class="mb-3">

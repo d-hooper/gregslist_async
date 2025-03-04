@@ -31,7 +31,7 @@ export class House {
     }
   }
 
-  get deleteButton() {
+  get userButtons() {
     const user = AppState.identity
     
     if (user == null) {
@@ -43,9 +43,14 @@ export class House {
     }
     
     return `
-    <button onclick="app.housesController.deleteHouseListing('${this.id}')" class="btn btn-outline-danger">
-      Delete
-    </button>
+    <div>
+      <button onclick="app.housesController.deleteHouseListing('${this.id}')" class="btn btn-outline-danger" type="button">
+        Delete
+      </button>
+      <button onclick="app.housesController.updateHouseListing()" class="btn btn-outline-info" type="button">
+        Update
+      </button>
+    </div>
     `
   }
 
@@ -73,7 +78,7 @@ export class House {
               <img src="${this.creator.picture}" class="creator-img">
               <span>${this.creator.name}</span>
             </div>
-            ${this.deleteButton}
+            ${this.userButtons}
             </div>
           </div>
         </div>

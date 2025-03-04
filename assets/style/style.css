@@ -58,3 +58,7 @@ input:not([type="color"]) {
 .creator-img {
   max-height: 3em;
 }
+
+.btn-outline-info:hover{
+  color: white;
+}

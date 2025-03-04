@@ -48,6 +48,16 @@ export class HousesController {
     }
   }
 
+  async updateHouseListing() {
+    const myModal = document.getElementById('updateHouseModal')
+    console.log(myModal);
+    const myForm = document.getElementById('updateHouseForm')
+
+    myModal.addEventListener('shown.bs-modal', () => {
+      myForm.focus()
+    })
+  }
+
   async deleteHouseListing(houseId) {
     const confirmed = await Pop.confirm('Are you sure you want to delete this house listing?', 'This change cannot be undone.', 'Yes, please delete it.', 'No, I changed my mind.')
 
