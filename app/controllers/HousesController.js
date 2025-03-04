@@ -7,6 +7,7 @@ export class HousesController {
     this.getHouses()
   }
 
+
   async getHouses() {
     try {
       await housesServices.getHouses()
