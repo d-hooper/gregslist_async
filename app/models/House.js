@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 
 export class House {
@@ -30,6 +31,25 @@ export class House {
     }
   }
 
+  get deleteButton() {
+    const user = AppState.identity
+    
+    if (user == null) {
+      return ''
+    }
+    
+    if (this.creatorId != user.id) {
+      return ''
+    }
+    
+    return `
+    <button class="btn btn-outline-danger">
+      Delete
+    </button>
+    `
+  }
+
+
   get houseCard() {
     return `
     <div class="col-12">
@@ -48,8 +68,12 @@ export class House {
                 <p>${this.description}</p>
               </div>
             </div>
-            <div class="mb-3">
-              <button class="btn btn-outline-danger">Delete</button>
+            <div class="mb-3 d-flex justify-content-between">
+            <div>
+              <img src="${this.creator.picture}" class="creator-img">
+              <span>${this.creator.name}</span>
+            </div>
+            ${this.deleteButton}
             </div>
           </div>
         </div>

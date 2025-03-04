@@ -7,6 +7,7 @@ export class HousesController {
 
   constructor() {
     AppState.on('houses', this.drawHouses)
+    AppState.on('identity', this.drawHouses)
     this.getHouses()
   }
 
