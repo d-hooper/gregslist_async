@@ -33,39 +33,36 @@
       </div>
       <div class="row align-items-center mb-4">
         <div class="col-5">
-          <img src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A hand holding house keys in front of a door" class="img-fluid">
+          <img src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+               alt="A hand holding house keys in front of a door" class="house-form-img rounded">
         </div>
         <div class="col-7">
-          <div class="shadow px-5 py-3">
+          <div class="shadow px-5 py-3 rounded">
             <form onsubmit="app.housesController.createHouseListing()">
               <div class="mb-3">
                 <label for="houseAddress">Street Address</label>
-                <input id="houseAddress" name="address" type="text" required max="200"
-                       placeholder="1234 E. Main St.">
+                <input id="houseAddress" name="address" type="text" required max="200" placeholder="1234 E. Main St.">
               </div>
               <div class="mb-3">
                 <label for="houseYear">House Year</label>
-                <input id="houseYear" name="year" type="number" required min="1637" max="2025"
-                       placeholder="2015">
+                <input id="houseYear" name="year" type="number" required min="1637" max="2025" placeholder="2015">
               </div>
               <div class="mb-3">
                 <label for="housePrice">Price</label>
-                <input id="housePrice" name="price" type="number" required min="0" max="100000000" placeholder="450,000">
+                <input id="housePrice" name="price" type="number" required min="0" max="100000000"
+                       placeholder="450,000">
               </div>
               <div class="mb-3">
                 <label for="houseSqft">Square Footage</label>
-                <input id="houseSqft" name="sqft" type="number" required min="0" max="100000"
-                       placeholder="1,500 ft.">
+                <input id="houseSqft" name="sqft" type="number" required min="0" max="100000" placeholder="1,500 ft.">
               </div>
               <div class="mb-3">
                 <label for="numOfBedrooms">Number of Bedrooms</label>
-                <input id="numOfBedrooms" name="bedrooms" type="number" required min="1" max="100"
-                       placeholder="3">
+                <input id="numOfBedrooms" name="bedrooms" type="number" required min="1" max="100" placeholder="3">
               </div>
               <div class="mb-3">
                 <label for="numOfBathrooms">Number of Bathrooms</label>
-                <input id="numOfBathrooms" name="bathrooms" type="number" required min="1" max="20"
-                       placeholder="2">
+                <input id="numOfBathrooms" name="bathrooms" type="number" required min="1" max="20" placeholder="2">
               </div>
               <div class="mb-3">
                 <label for="houseDescription">House Description</label>
@@ -74,8 +71,7 @@
               </div>
               <div class="mb-3">
                 <label for="houseImgUrl">House Image URL</label>
-                <input id="houseImgUrl" name="imgUrl" type="url" required max="1000"
-                       placeholder="https://image.com...">
+                <input id="houseImgUrl" name="imgUrl" type="url" required max="1000" placeholder="https://image.com...">
               </div>
               <div class="d-flex">
                 <button class="btn btn-outline-danger me-2" type="reset">
@@ -90,7 +86,37 @@
         </div>
       </div>
       <div id="houseListings" class="row">
-
+        <div class="col-12">
+          <div class="row rounded house-border" style="border-color: mediumseagreen">
+            <div class="col-md-8">
+              <div class="d-flex flex-column justify-content-between h-100">
+                <div>
+                  <div>
+                    <p class="fs-3 mb-3">2-Story 4 Bed 4 Bath Home</p>
+                    <small>Listed on 04/12/2023</small>
+                  </div>
+                  <div class="d-flex justify-content-between mt-3">
+                    <p class="fs-4">Listed Price: $590,000</p>
+                    <p class="fs-4">Built in 1997</p>
+                  </div>
+                  <div class="mt-3 fs-5">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates numquam sequi architecto
+                      adipisci ipsa fugit!</p>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-outline-danger">Delete</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 px-0">
+              <div>
+                <img src="https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     alt="A house with a lawn" class="house-img">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

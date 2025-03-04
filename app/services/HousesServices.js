@@ -1,6 +1,9 @@
+import { api } from "../utils/Axios.js"
+
 class HousesServices{
   async getHouses() {
-    await console.log('Return houses🏠');
+    const response = await api.get('api/houses')
+    console.log('Got houses 🏠🏠🏠', response.data);
   }
 
 }

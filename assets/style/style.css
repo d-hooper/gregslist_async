@@ -29,10 +29,23 @@ input {
   border-style: solid;
 }
 
-.car-img {
+.house-border {
+  border-width: thick;
+  border-style: dashed;
+  border-radius: 4px;
+}
+
+.car-img, .house-img {
   height: 40vh;
   width: 100%;
   object-fit: cover;
+}
+
+.house-form-img {
+  min-height: 60dvh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .car-form-img {
