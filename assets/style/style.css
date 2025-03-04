@@ -13,7 +13,7 @@ label {
   display: block;
 }
 
-input {
+input:not([type="color"]) {
   width: 100%;
 }
 

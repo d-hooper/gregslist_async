@@ -37,7 +37,12 @@
                alt="A hand holding house keys in front of a door" class="house-form-img rounded">
         </div>
         <div class="col-7">
-          <div class="shadow px-5 py-3 rounded">
+          <div class="text-center">
+            <div id="houseFormPlaceholder" class="">
+              <p class="fs-1">Please log in to add a house listing.</p>
+            </div>
+          </div>
+          <div id="houseForm" class="shadow px-5 py-3 rounded d-none">
             <form onsubmit="app.housesController.createHouseListing()">
               <div class="mb-3">
                 <label for="houseLevels">Number of Stories</label>

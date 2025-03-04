@@ -8,6 +8,7 @@ export class HousesController {
   constructor() {
     AppState.on('houses', this.drawHouses)
     AppState.on('identity', this.drawHouses)
+    AppState.on('identity', this.drawHouseForm)
     this.getHouses()
   }
 
@@ -19,12 +20,19 @@ export class HousesController {
     housesElem.innerHTML = housesContent
   }
 
+  drawHouseForm() {
+    document.getElementById('houseFormPlaceholder').classList.add('d-none')
+    document.getElementById('houseForm').classList.remove('d-none')
+  }
+
   async createHouseListing() {
     try {
       event.preventDefault()
       const formElem = event.target
       const rawHouseData = getFormData(formElem)
       await housesServices.createHouse(rawHouseData)
+      // @ts-ignore
+      formElem.reset()
     } catch (error) {
       console.error('COULD NOT ADD THE SPECIFIED HOUSE', error);
       Pop.error(error, 'Could not add house')
