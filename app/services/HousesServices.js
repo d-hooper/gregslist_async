@@ -4,6 +4,12 @@ import { api } from "../utils/Axios.js"
 
 class HousesServices{
   
+  async createHouse(rawHouseData) {
+    const response = await api.post('api/houses', rawHouseData)
+    const newHouse = new House(response.data)
+    AppState.houses.push(newHouse)
+  }
+  
   async getHouses() {
     const response = await api.get('api/houses')
     console.log('Got houses 🏠🏠🏠', response.data);

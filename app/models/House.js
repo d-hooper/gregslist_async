@@ -33,7 +33,7 @@ export class House {
   get houseCard() {
     return `
     <div class="col-12">
-      <div class="row rounded house-border mb-3 p-2" style="border-color: #${this.randomColorBorder}">
+      <div class="row rounded house-border mb-3" style="border-color: #${this.randomColorBorder}">
         <div class="col-md-8">
           <div class="d-flex flex-column justify-content-between h-100">
             <div>
@@ -41,7 +41,7 @@ export class House {
                 <p class="fs-3 mb-3">${this.levels}-Story ${this.bedrooms} Bed ${this.bathrooms} Bath Home</p>
               </div>
               <div class="d-flex justify-content-between mt-3">
-                <p class="fs-4">Listed Price: ${this.price}</p>
+                <p class="fs-4">Listed Price: $${this.price.toLocaleString()}</p>
                 <p class="fs-4">Built in ${this.year}</p>
               </div>
               <div class="mt-3 fs-5">

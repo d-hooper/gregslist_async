@@ -40,21 +40,8 @@
           <div class="shadow px-5 py-3 rounded">
             <form onsubmit="app.housesController.createHouseListing()">
               <div class="mb-3">
-                <label for="houseAddress">Street Address</label>
-                <input id="houseAddress" name="address" type="text" required max="200" placeholder="1234 E. Main St.">
-              </div>
-              <div class="mb-3">
-                <label for="houseYear">House Year</label>
-                <input id="houseYear" name="year" type="number" required min="1637" max="2025" placeholder="2015">
-              </div>
-              <div class="mb-3">
-                <label for="housePrice">Price</label>
-                <input id="housePrice" name="price" type="number" required min="0" max="100000000"
-                       placeholder="450,000">
-              </div>
-              <div class="mb-3">
-                <label for="houseSqft">Square Footage</label>
-                <input id="houseSqft" name="sqft" type="number" required min="0" max="100000" placeholder="1,500 ft.">
+                <label for="houseLevels">Number of Stories</label>
+                <input id="houseLevels" name="levels" type="number" required placeholder="1">
               </div>
               <div class="mb-3">
                 <label for="numOfBedrooms">Number of Bedrooms</label>
@@ -65,13 +52,22 @@
                 <input id="numOfBathrooms" name="bathrooms" type="number" required min="1" max="20" placeholder="2">
               </div>
               <div class="mb-3">
+                <label for="houseYear">Year of Construction</label>
+                <input id="houseYear" name="year" type="number" required min="1637" max="2025" placeholder="2015">
+              </div>
+              <div class="mb-3">
+                <label for="housePrice">Price</label>
+                <input id="housePrice" name="price" type="number" required min="0" max="100000000"
+                       placeholder="450000">
+              </div>
+              <div class="mb-3">
                 <label for="houseDescription">House Description</label>
-                <input id="houseDescription" name="description" type="text" required max="120"
+                <input id="houseDescription" name="description" type="text" max="120"
                        placeholder="This house is...">
               </div>
               <div class="mb-3">
                 <label for="houseImgUrl">House Image URL</label>
-                <input id="houseImgUrl" name="imgUrl" type="url" required max="1000" placeholder="https://image.com...">
+                <input id="houseImgUrl" name="imgUrl" type="url" max="500" placeholder="https://image.com...">
               </div>
               <div class="d-flex">
                 <button class="btn btn-outline-danger me-2" type="reset">
